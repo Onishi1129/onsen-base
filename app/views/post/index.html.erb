@@ -1,0 +1,11 @@
+<% @posts.each do |post| %>
+<div>
+  <%= attachment_image_tag post, :image %>
+  <p>投稿ユーザー画像：<%= image_tag('') %></p>
+  <p>温泉場所：<%= post.onsen_place %></p>
+  <p>温泉名：<%= post.onsen_name %></p>
+  <p>説明：<%= post.caption %></p>
+  <p>ユーザーネーム：<%= post.user.name %></p>
+
+</div>
+<% end %>
