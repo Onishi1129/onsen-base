@@ -2,7 +2,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
   def change
     create_table :posts do |t|
       t.text :onsen_place
-      t.text :onen_name
+      t.text :onsen_name
       t.string :image_id
       t.text :caption
       t.integer :user_id
