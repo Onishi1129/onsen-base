@@ -38,6 +38,15 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to posts_path
   end
+  
+  def search
+    if params[:onsen_place].present?
+      @posts = Post.where('onsen_place LIKE ?', "%#{params[:onsen_place]}%")
+    else
+      @posts = Post.none
+    end
+    render "index"
+  end
 
 private
 
