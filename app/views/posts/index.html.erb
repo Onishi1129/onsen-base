@@ -7,12 +7,19 @@
            <% @post.errors.full_messages.each do |message| %>
              <li><%= message %></li>
            <% end %>
-  <p>投稿ユーザー画像：<%= attachment_image_tag @post.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></p>
-  <p>温泉場所：<%= @post.onsen_place %></p>
-  <p>温泉名：<%= @post.onsen_name %></p>
-  <p>説明：<%= @post.caption %></p>
-  <p>ユーザーネーム：<%= @post.user.name %></p>
-  <p>画像:<%= attachment_image_tag(@post, :image, :fill, 60, 60, fallback: '') %></p>
-
+         </ul>
+       </div>
+    <% end %>
+    <div class='col-md-3'>
+      <h2>User info</h2>
+      <%= render 'users/profile', user: current_user %>
+      <h2 class="mt-3"></h2>
+      <%= render 'form', post: @post %>
+    </div>
+    <div class='col-md-8 offset-md-1'>
+      <h2>投稿一覧</h2>
+      <%= render 'index', posts: @posts%>
+    </div>
+  </div>
 </div>
-<% end %>
+
