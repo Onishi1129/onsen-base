@@ -1,24 +1,35 @@
-# README
+# onnsenk_base
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+温泉について情報共有しよう！特にマイナーで知らない人が多いような場所をみんなで語ろう！もちろん有名な場所も歓迎。全国のまだ知らない温泉について知るきっかけとなれたら嬉しいです！！
 
-Things you may want to cover:
+### サイトテーマ
+知っている人が少ないマイナーな温泉も含めた全国の様々な温泉の情報交換ができる場所を作りたかった。
 
-* Ruby version
+### テーマを選んだ理由
+趣味の温泉をもっと楽しく、知ることが出来る場を作りたかったため。
 
-* System dependencies
+### ターゲットユーザ
+温泉好きなユーザー。マイナーな場所や全国の温泉について知りたい人向け
 
-* Configuration
+### 主な利用シーン
+新しい温泉を開拓したい人や温泉について情報収集したい人に向けた交流（情報交換）場所
 
-* Database creation
+## 設計書
+<...>
 
-* Database initialization
+## チャレンジ要素一覧
+<https://docs.google.com/spreadsheets/d/1liPEeFbuIkjR3lvnSmRkjo5MgYbzGpBWt_jlljKvlhs/edit#gid=0>
 
-* How to run the test suite
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 使用素材
+illustAC
+ac-illust.com
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
+- illustAC (URL: ac-illust.com)
