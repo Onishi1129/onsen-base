@@ -1,3 +1,49 @@
-// Place all the styles related to the homes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* 水色グラデーション着せ替え */
+body, .entry-content h3, .categories a, .hatena-module-category .hatena-urllist li a, a.entry-see-more {
+    background: -moz-linear-gradient(left, #84fab0 0%, #8fd3f4 100%);
+    background: -webkit-linear-gradient(left, #84fab0 0%, #8fd3f4 100%);
+    background: linear-gradient(to right, #84fab0 0%, #8fd3f4 100%);
+    /* 背景グラデーション1 */
+}
+
+@media only screen and (max-width:1141px) {
+    nav#slide-menu, div.menu-trigger {
+        background: -moz-linear-gradient(30deg, #84fab0 0%, #8fd3f4 100%);
+        background: -webkit-linear-gradient(30deg, #84fab0 0%, #8fd3f4 100%);
+        background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+        /* 背景グラデーション2 */
+    }
+}
+
+
+/* 文字色 */
+a, .leave-comment-title, .hatena-module-title, .hatena-module-title a, .sns-twitter, .sns-facebook, .sns-bookmark, a.sns-bookmark:visited, .sns-googleplus, .sns-pocket, .sns-line, a.sns-link:hover {
+    color: #8fd3f4;
+}
+
+.leave-comment-title {
+    border: 1px solid #8fd3f4;
+}
+
+
+/* 見出し */
+.entry-content h2 {
+    position: relative;
+    padding: 0.2em 0.5em;
+    border-left: 8px solid #8fd3f4;
+}
+
+.entry-content h4 {
+    position: relative;
+    padding: .5em;
+    color: #8fd3f4;
+    border-top: 1px solid #8fd3f4;
+    border-bottom: 1px solid #8fd3f4;
+}
+
+.entry-content h5 {
+    position: relative;
+    padding: .5em;
+    color: #8fd3f4;
+    border-left: 4px solid #8fd3f4;
+}
