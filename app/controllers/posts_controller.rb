@@ -39,8 +39,9 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to posts_path
   end
-  
+
   def search
+    @post = Post.new
     if params[:onsen_place].present?
       @posts = Post.where('onsen_place LIKE ?', "%#{params[:onsen_place]}%")
     else
