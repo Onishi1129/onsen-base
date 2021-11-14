@@ -5,6 +5,9 @@ body, .entry-content h3, .categories a, .hatena-module-category .hatena-urllist 
     background: linear-gradient(to right, #84fab0 0%, #8fd3f4 100%);
     /* 背景グラデーション1 */
 }
+.background {
+  background-image: image-url('no_image.jpg');
+}
 
 @media only screen and (max-width:1141px) {
     nav#slide-menu, div.menu-trigger {
