@@ -22,7 +22,7 @@
 <https://docs.google.com/spreadsheets/d/1liPEeFbuIkjR3lvnSmRkjo5MgYbzGpBWt_jlljKvlhs/edit#gid=0>
 
 ## 開発環境
-- OS：Linux(CentOS)
+- OS：Amazon Linux 2
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
@@ -34,6 +34,3 @@ ac-illust.com
 - illustAC (URL: ac-illust.com)
 - 
 - 
-メモ
-投稿日時追加する
-折り畳みを使ってカテゴリ（都道府県）を追加
