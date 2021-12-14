@@ -61,8 +61,8 @@ Rails.application.configure do
     :address => "smtp.gmail.com",
     :port => 587,
     :domain => 'smtp.gmail.com',
-    :user_name => ENV["GOOGLE_MAIL_ADDRESS"],
-    :password => ENV["GOOGLE_MAILER_PASSWORD"],
+    :user_name => "taku.hot.2545@gmail.com",
+    :password => "cnsrkfgmnusnrxhu",
     :authentication => 'login'
   }
   # Use an evented file watcher to asynchronously detect changes in source code,
