@@ -1,6 +1,6 @@
 <% @posts.each do |post| %>
 <div>
-  <%= link_to post_path(post) do %>
+  <%= link_to post.user.name, post_path(post) %>
     <p>ユーザー画像：<%= attachment_image_tag(@user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg") %></p>
     <p>ユーザーネーム：<%= post.user.name %></p>
     <p>温泉場所：<%= post.prefectures_select %>
