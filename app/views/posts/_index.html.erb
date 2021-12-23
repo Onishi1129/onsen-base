@@ -1,14 +1,14 @@
 <% @posts.each do |post| %>
 <div>
-  <%= link_to post.user.name, post_path(post) %>
-    <p>ユーザー画像：<%= attachment_image_tag(@user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg") %></p>
-    <p>ユーザーネーム：<%= post.user.name %></p>
-    <p>温泉場所：<%= post.prefectures_select %>
-               ：<%= post.onsen_place %></p>
-    <p>温泉名：<%= post.onsen_name %></p>
-    <p>説明：<%= post.caption %></p>
-    <p>投稿画像:<%= attachment_image_tag(post, :image, :fill, 150, 150, fallback: '') %></p>
-  
+  <%= link_to post_path(post) do %>
+    ユーザー画像：<%= attachment_image_tag(@user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg") %><br><br>
+    ユーザーネーム：<%= post.user.name %><br><br>
+    温泉場所：<%= post.prefectures_select %>
+               ：<%= post.onsen_place %><br><br>
+    温泉名：<%= post.onsen_name %><br><br>
+    説明：<%= post.caption %><br><br>
+    投稿画像:<%= attachment_image_tag(post, :image, :fill, 150, 150, fallback: '') %>
+  <% end %>
 
 </div>
 <% end %>
