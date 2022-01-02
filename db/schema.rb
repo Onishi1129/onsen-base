@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_10_19_063832) do
 
   create_table "posts", force: :cascade do |t|
+    t.integer "postal_code"
     t.integer "prefectures_select", default: 0, null: false
     t.text "onsen_place"
     t.text "onsen_name"

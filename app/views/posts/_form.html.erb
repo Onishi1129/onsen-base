@@ -1,6 +1,9 @@
 <h1>投稿フォーム</h1>
 <%= form_with model: @post, local:true do |f| %>
   <h4>温泉場所</h4>
+  <p>郵便番号</p>
+  <%= f.text_field :postal_code %>
+  <p>住所</p>
   <%= f.select :prefectures_select, Post.prefectures_selects.keys, {} %>
   <%= f.text_field :onsen_place %>
   <h4>温泉名</h4>
