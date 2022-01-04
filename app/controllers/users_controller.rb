@@ -4,9 +4,11 @@ class UsersController < ApplicationController
     @posts = @user.posts
     @post = Post.new
     @users = User.all
+    
   end
   
   def index
+    @user = User.find(params[:id])
     @users = User.all
     @post = Post.new
   end
