@@ -8,7 +8,60 @@
     温泉名：<%= post.onsen_name %><br><br>
     説明：<%= post.caption %><br><br>
     投稿画像:<%= attachment_image_tag(post, :image, :fill, 150, 150, fallback: '') %>
+    日時：<%= post.created_at %><br><br>
   <% end %>
 
 </div>
 <% end %>
+
+
+<h2>gmap</h2>
+
+<input id="address" type="textbox" value="Sydney, NSW">
+
+<input type="button" value="Encode" onclick="codeAddress()">
+<div id='map'>
+</div>
+
+<style>
+#map{
+  height: 400px;
+}
+</style>
+
+<script>
+
+
+let map
+let geocoder
+
+function initMap(){
+  
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+  center: {lat: -34.397, lng: 150.644},
+  zoom: 8
+  });
+}
+
+function codeAddress(){
+  
+  let inputAddress = document.getElementById('address').value;
+
+  
+  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    if (status == 'OK') {
+      map.setCenter(results[0].geometry.location);
+
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBN_tybKQrAruaJFjX3vtKIbjWtOcvOgQs&callback=initMap" async defer></script>
