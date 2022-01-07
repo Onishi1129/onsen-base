@@ -1,7 +1,7 @@
 <h1>投稿フォーム</h1>
 <%= form_with model: @post, local:true do |f| %>
   <h4>温泉場所</h4>
-  <p>郵便番号</p>
+  <p>郵便番号（ハイフン不要）</p>
   <%= f.text_field :postal_code %>
   <p>住所</p>
   <%= f.select :prefectures_select, Post.prefectures_selects.keys, {} %>
@@ -13,4 +13,30 @@
   <%= f.submit '投稿' %>
   <h4>画像</h4>
   <%= f.attachment_field :image %>
-  <% end %>
+ <% end %>
+ 
+<%= form_with model: @post, local:true do |f| %>
+ <div class="field">
+    <%= f.label :postal_code %><br>
+    <%= f.text_field :postal_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :prefecture_code %><br>
+    <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :name, :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :street %><br>
+    <%= f.text_field :street %>
+  </div>
+  <div class="field">
+    <%= f.label :other_address %><br>
+    <%= f.text_field :other_address %>
+  </div>
+<% end %>

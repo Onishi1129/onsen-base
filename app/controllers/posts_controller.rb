@@ -53,7 +53,7 @@ class PostsController < ApplicationController
 private
 
   def post_params
-    params.require(:post).permit(:postal_code, :onsen_place, :onsen_name, :image, :caption)
+    params.require(:post).permit(:postal_code, :prefectures_select, :onsen_place, :onsen_name, :image, :caption)
   end
 
 end
