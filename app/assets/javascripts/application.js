@@ -25,9 +25,9 @@
 
 $(function() {
   $(document).on('turbolinks:load', () => {
-    $('#user_postal_code').jpostal({
+    $('#post_postal_code').jpostal({
       postcode : [
-        '#user_postal_code'
+        '#post_postal_code'
       ],
       address: {
          "#post_prefectures_select": "%3",
