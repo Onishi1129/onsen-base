@@ -25,7 +25,7 @@
 
 $(function() {
   $(document).on('turbolinks:load', () => {
-    $('#post_postal_code').postal({
+    $('#post_postal_code').jpostal({
       postcode : [
         '#post_postal_code'
       ],
