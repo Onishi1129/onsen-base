@@ -49,10 +49,10 @@ function initMap(){
 
 function codeAddress(){
   
-  let inputAddress = document.getElementById('address').value;
+  let inputAddress = document.getElementById('onsen_place').value;
 
   
-  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+  geocoder.geocode( { 'onsen_place': inputAddress}, function(results, status) {
     if (status == 'OK') {
       map.setCenter(results[0].geometry.location);
 
