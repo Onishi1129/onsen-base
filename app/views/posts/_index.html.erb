@@ -11,16 +11,19 @@
     説明：<%= post.caption %><br><br>
     投稿画像:<%= attachment_image_tag(post, :image, :fill, 150, 150, fallback: '') %>
     日時：<%= post.created_at %><br><br>
+    
   <% end %>
 
 </div>
 <% end %>
 
 
-<h2>googlemap</h2>
+<h2>gmap</h2>
 
-<input id="address" type="textbox" value="Tokyo">
+<!-- 地名入力用のinputを追加 -->
+<input id="address" type="textbox" value="Sydney, NSW">
 
+<!-- buttonをクリックしたらcodeAddressを実行　-->
 <input type="button" value="Encode" onclick="codeAddress()">
 <div id='map'>
 </div>
@@ -32,30 +35,35 @@
 </style>
 
 <script>
-
+/*
+mapを関数の外で定義(codeAddressでも使うため)
+geocoderを用意
+*/
 
 let map
 let geocoder
 
 function initMap(){
-  
+  // geocoderを初期化
   geocoder = new google.maps.Geocoder()
 
   map = new google.maps.Map(document.getElementById('map'), {
-  center: {lat: 35.681236, lng: 139.767125},
+  center: {lat: -34.397, lng: 150.644},
   zoom: 8
   });
 }
 
 function codeAddress(){
-  
-  let inputAddress = document.getElementById('onsen_place').value;
+  // 入力を取得
+  let inputAddress = document.getElementById('address').value;
 
-  
-  geocoder.geocode( { 'onsen_place': inputAddress}, function(results, status) {
+  // geocodingしたあとmapを移動
+  geocoder.geocode( { 'post': '東京都千代田区神田小川町3-28-9' }, function(results, status) {
     if (status == 'OK') {
+　　　　　　　　　　　　// map.setCenterで地図が移動
       map.setCenter(results[0].geometry.location);
 
+　　　　　　　　　　　　// google.maps.MarkerでGoogleMap上の指定位置にマーカが立つ
       var marker = new google.maps.Marker({
           map: map,
           position: results[0].geometry.location
