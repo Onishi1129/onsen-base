@@ -55,10 +55,10 @@ function initMap(){
 
 function codeAddress(){
   // 入力を取得
-  let inputAddress = document.getElementById('address').value;
+  let onsen_place = document.getElementById('address').value;
 
   // geocodingしたあとmapを移動
-  geocoder.geocode( { 'post': '東京都千代田区神田小川町3-28-9' }, function(results, status) {
+  geocoder.geocode( { 'address': onsen_place}, function(results, status) {
     if (status == 'OK') {
 　　　　　　　　　　　　// map.setCenterで地図が移動
       map.setCenter(results[0].geometry.location);
