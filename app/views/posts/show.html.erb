@@ -26,11 +26,63 @@
           <td><%= @post.onsen_name %></td>
           <td><%= @post.caption %></td>
           <% if @post.user_id == current_user.id %>
+
           　<td><%= link_to 'Edit', edit_post_path(@post), class: "btn btn-sm btn-success edit_book_#{@post.id}" %></td>
           　<td><%= link_to 'Destroy', post_path(@post), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_post_#{@post.id}"%></td>
           <% end %>
+        </tr>
+        <tr>
+        <td colspan="4"><div id='map'>
+          </div></td>
         </tr>
       </table>
     </div>
   </div>
 </div>
+<h2>gmap</h2>
+
+
+<div id='map'>
+</div>
+
+<style>
+#map{
+  height: 400px;
+}
+</style>
+
+<script>
+let map
+let geocoder
+
+function initMap(){
+  // geocoderを初期化
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+  center: {lat: -34.397, lng: 150.644},
+  zoom: 8
+  });
+
+
+  // 入力を取得
+  let onsen_place = '<%= @post.prefectures_select %><%= @post.onsen_place %>';
+
+  // geocodingしたあとmapを移動
+  geocoder.geocode( { 'address': onsen_place}, function(results, status) {
+    if (status == 'OK') {
+　　　　　　　　　　　　// map.setCenterで地図が移動
+      map.setCenter(results[0].geometry.location);
+
+　　　　　　　　　　　　// google.maps.MarkerでGoogleMap上の指定位置にマーカが立つ
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBN_tybKQrAruaJFjX3vtKIbjWtOcvOgQs&callback=initMap" async defer></script>
