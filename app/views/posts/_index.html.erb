@@ -4,7 +4,7 @@
     ユーザー画像：<%= attachment_image_tag(@user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg") %><br><br>
     ユーザーネーム：<%= post.user.name %><br><br>
     温泉場所<br><br>
-   　郵便番号:<%= post. postal_code %><br><br>
+   　郵便番号:<%= post.postal_code %><br><br>
          住所:<%= post.prefectures_select %>
              :<%= post.onsen_place %><br><br>
     温泉名：<%= post.onsen_name %><br><br>
