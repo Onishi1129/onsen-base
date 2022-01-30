@@ -10,7 +10,7 @@
     温泉名：<%= post.onsen_name %><br><br>
     説明：<%= post.caption %><br><br>
     投稿画像:<%= attachment_image_tag(post, :image, :fill, 150, 150, fallback: '') %>
-    日時：<%= post.created_at %><br><br>
+    日時：<%= l post.created_at %><br><br>
 
   <% end %>
 
