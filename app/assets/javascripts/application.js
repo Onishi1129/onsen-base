@@ -24,15 +24,13 @@
 //= require jquery.jpostal
 
 $(function() {
-  $(document).on('turbolinks:load', () => {
-    $('#post_postal_code').jpostal({
-      postcode : [
-        '#post_postal_code'
-      ],
-      address: {
-         "#post_prefectures_select": "%3",
-         "#post_onsen_place"       : "%4%5%6%7",
-      }
-    });
+  $('#post_postal_code').jpostal({
+    postcode : [
+      '#post_postal_code'
+    ],
+    address: {
+      "#post_prefectures_select": "%3",
+      "#post_onsen_place"       : "%4%5%6%7",
+    }
   });
 });
